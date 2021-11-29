@@ -5,6 +5,7 @@ import color from '../assets/color';
 import Icon from '@expo/vector-icons/AntDesign';
 import HomeScreen from '../Screen/HomeScreen';
 import DrawerNavigation from './DrawerNavigation';
+import SingleMeal from '../Components/SingleMeal';
 
 const bgcolor = color.light;
 const StackNavigation = () => {
@@ -18,6 +19,13 @@ const StackNavigation = () => {
           headerShown: false,
         }}
         component={HomeScreen}
+      />
+      <Stack.Screen
+        name='Meals Details'
+        options={{
+          headerShown: false,
+        }}
+        component={SingleMeal}
       />
     </Stack.Navigator>
   );

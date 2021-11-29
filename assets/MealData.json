@@ -42,7 +42,8 @@
             420
         ],
         "imageURL": "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/27/20/8/picVfzLZo.jpg",
-        "originalURL": "http://www.food.com/recipe/to-die-for-crock-pot-roast-27208"
+        "originalURL": "http://www.food.com/recipe/to-die-for-crock-pot-roast-27208",
+        "description": "Chuck roast, yukon gold potatoes, beef broth"
     },
     {
         "id": 2,
@@ -89,7 +90,8 @@
             0
         ],
         "imageURL": "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/50/84/7/picMcSyVd.jpg",
-        "originalURL": "http://www.food.com/recipe/roasted-asparagus-50847"
+        "originalURL": "http://www.food.com/recipe/roasted-asparagus-50847",
+        "description":"Roasting asparagus is super easy and quick! Simply toss your prepared asparagus with a light drizzle of olive oil, and a sprinkle of salt and pepper."
     },
     {
         "id": 3,
@@ -135,7 +137,8 @@
             20,
             0
         ],
-        "imageURL": "https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fimage%2F2017%2F08%2Fmain%2Fsweet-potato-red-lentil-curry-1709p54.jpg%3Fitok%3Dywz89TOu"
+        "imageURL": "https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fimage%2F2017%2F08%2Fmain%2Fsweet-potato-red-lentil-curry-1709p54.jpg%3Fitok%3Dywz89TOu",
+        "description":"Delightful! We've used the sauce on brown lentils, red lentils, and rice, and I'm pretty sure this is my favorite curry sauce."
     },
     {
         "id": 4,
@@ -200,7 +203,8 @@
             15,
             0
         ],
-        "imageURL": "http://upload.wikimedia.org/wikipedia/commons/c/c7/Spinach_pizza.jpg"
+        "imageURL": "http://upload.wikimedia.org/wikipedia/commons/c/c7/Spinach_pizza.jpg",
+        "description":"Big Cheezy Pizza with your favourit toppings."
     },
     {
         "id": 5,
@@ -258,7 +262,8 @@
             0
         ],
         "imageURL": "http://elanaspantry.com/wp-content/uploads/2008/10/acorn_squash_with_cranberry.jpg",
-        "originalURL": ""
+        "originalURL": "",
+        "description":"Apple Cranberry Crumble is delicious and perfect for your Holiday table! Easier and lighter than making a pie, topped with oats and nuts"
     },
     {
         "id": 6,
@@ -308,7 +313,8 @@
             30
         ],
         "imageURL": "http://upload.wikimedia.org/wikipedia/commons/f/f9/Yorkshire_Pudding.jpg",
-        "originalURL": "http://upload.wikimedia.org/wikipedia/commons/f/f9/Yorkshire_Pudding.jpg"
+        "originalURL": "http://upload.wikimedia.org/wikipedia/commons/f/f9/Yorkshire_Pudding.jpg",
+        "description":"This Traditional Yorkshire pudding recipe shows you how you can use cups as measurements rather than imperial or metric weights"
     },
     {
         "id": 7,
@@ -478,7 +484,8 @@
             0
         ],
         "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCtmQTNyXmM2k5Yp_YoFFJeJ0Posb1MTGW0g&usqp=CAU",
-        "originalURL": "http://www.canadianliving.com/food/blueberry_oatmeal_squares.php"
+        "originalURL": "http://www.canadianliving.com/food/blueberry_oatmeal_squares.php",
+        "description":"These blueberry oatmeal bars are just the right amount of sweet with their juicy blueberry filling, soft and buttery oatmeal crust, and golden crumb topping"
     },
     {
         "id": 9,
@@ -568,6 +575,7 @@
             0
         ],
         "imageURL": "http://www.chatelaine.com/wp-content/uploads/2013/05/Curried-chicken-salad.jpg",
-        "originalURL": "http://www.chatelaine.com/recipe/stovetop-cooking-method/curried-chicken-salad/"
+        "originalURL": "http://www.chatelaine.com/recipe/stovetop-cooking-method/curried-chicken-salad/",
+        "description":"In a large salad bowl combine the chicken, celery, onion, apple, raisins, grapes, pecans, pepper, curry powder and mayonnaise"
     }
 ]
