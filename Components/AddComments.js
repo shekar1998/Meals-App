@@ -2,22 +2,32 @@ import { Button, Modal, FormControl, Input, Icon } from 'native-base';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Rating } from 'react-native-elements';
-import { MaterialIcons } from "@expo/vector-icons"
-
+import { MaterialIcons } from '@expo/vector-icons';
+import MealData from '../assets/MealData.json';
 
 const AddComments = (props) => {
-  const [rating, setRating] = useState()
-  const [user, setUser] = useState("")
-  const [comment, setComment] = useState("")
-
+  const [rating, setRating] = useState();
+  const [user, setUser] = useState('');
+  const [comment, setComment] = useState('');
   const handleRating = (val) => {
-    setRating(val)
-    console.log(rating);
-  }
+    setRating(val);
+  };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    const addedComment = {
+      id: Date.now(),
+      comment: comment,
+      user: user,
+      rating: rating,
+    };
+    const selectedData = await MealData.filter((data) => {
+      if (data.id === props.item.id) {
+        data.comments.push(addedComment);
+      }
+    });
+    // await MealData[props.item.id].comments.push(addedComment)
     props.handleClose();
-  }
+  };
 
   return (
     <>
@@ -42,15 +52,8 @@ const AddComments = (props) => {
               <Input
                 onChangeText={(text) => setUser(text)}
                 value={user}
-                InputLeftElement={
-                  <Icon
-                    as={<MaterialIcons name="person" />}
-                    size={5}
-                    ml="2"
-                    color="muted.400"
-                  />
-                }
-                placeholder="Name"
+                InputLeftElement={<Icon as={<MaterialIcons name='person' />} size={5} ml='2' color='muted.400' />}
+                placeholder='Name'
               />
             </FormControl>
             <FormControl mt='3'>
@@ -58,15 +61,8 @@ const AddComments = (props) => {
               <Input
                 onChangeText={(text) => setComment(text)}
                 value={comment}
-                InputLeftElement={
-                  <Icon
-                    as={<MaterialIcons name="comment" />}
-                    size={5}
-                    ml="2"
-                    color="muted.400"
-                  />
-                }
-                placeholder="Comment"
+                InputLeftElement={<Icon as={<MaterialIcons name='comment' />} size={5} ml='2' color='muted.400' />}
+                placeholder='Comment'
               />
             </FormControl>
           </Modal.Body>
@@ -81,11 +77,7 @@ const AddComments = (props) => {
               >
                 Cancel
               </Button>
-              <Button
-                onPress={handleSubmit}
-              >
-                Submit
-              </Button>
+              <Button onPress={handleSubmit}>Submit</Button>
             </Button.Group>
           </Modal.Footer>
         </Modal.Content>

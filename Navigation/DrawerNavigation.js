@@ -22,7 +22,6 @@ const DrawerNavigation = () => {
         component={StackNavigation}
       />
       <Drawer.Screen name='AboutUs' component={AboutUs} />
-      <Drawer.Screen name='Menu' component={Menu} />
       <Drawer.Screen name='ContactUs' component={ContactUs} />
     </Drawer.Navigator>
   );

@@ -1,22 +1,20 @@
 import { Box, Circle, Divider, Heading, Icon, ScrollView, Stack, Text } from 'native-base';
 import React, { useState } from 'react';
 import { StyleSheet, View, Dimensions, Image, TouchableOpacity } from 'react-native';
-import color from '../assets/color';
 let { height, width } = Dimensions.get('window');
 import { AntDesign } from '@expo/vector-icons';
 import { Rating } from 'react-native-elements';
 import moment from 'moment';
 import AddComments from './AddComments';
 
-
 const SingleMeal = (props) => {
   const [Visible, setVisible] = useState(false);
 
-  const { comments } = props.route.params.params
+  const { comments } = props.route.params.params;
 
   const handleClose = () => {
     setVisible(false);
-  }
+  };
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
       <Box w={width} bg={'#fff'}>
@@ -60,17 +58,14 @@ const SingleMeal = (props) => {
           <Circle size={'md'} bg='secondary.400' mx={3}>
             <Icon as={<AntDesign name='hearto' />} color='white' size={8} />
           </Circle>
-          <TouchableOpacity
-            activeOpacity={0.5}
-            onPress={() => setVisible(true)}
-          >
+          <TouchableOpacity activeOpacity={0.5} onPress={() => setVisible(true)}>
             <Circle size={'md'} bg='blue.500' mx={3}>
               <Icon as={<AntDesign name='edit' />} color='white' size={8} />
             </Circle>
           </TouchableOpacity>
         </Box>
         <Divider my={2} bg='coolGray.300' thickness='10' />
-        <Box w={width} pb="2" pl="2" pr="2" alignItems={'flex-start'} >
+        <Box w={width} h={'100%'} pb='2' pl='2' pr='2' alignItems={'flex-start'}>
           <Heading size='md' ml='-1' alignSelf={'center'}>
             Comments
           </Heading>
@@ -126,7 +121,6 @@ const SingleMeal = (props) => {
         </Box>
 
         <AddComments visible={Visible} handleClose={handleClose} item={props.route.params.params} />
-
       </Box>
     </ScrollView>
   );

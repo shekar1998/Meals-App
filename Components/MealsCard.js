@@ -11,7 +11,7 @@ export const MealsCard = (props) => {
       style={styles.mainContainer}
     >
       <Box
-        maxW='80'
+        maxW='96'
         rounded='lg'
         overflow='hidden'
         borderColor='coolGray.200'
