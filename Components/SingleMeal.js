@@ -1,6 +1,6 @@
-import { Box, Circle, Divider, Heading, Icon, ScrollView, Stack, Text } from 'native-base';
+import { Box, Circle, Divider, Heading, Icon, ScrollView, Stack, Text, Image } from 'native-base';
 import React, { useState } from 'react';
-import { StyleSheet, View, Dimensions, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Dimensions, TouchableOpacity } from 'react-native';
 let { height, width } = Dimensions.get('window');
 import { AntDesign } from '@expo/vector-icons';
 import { Rating } from 'react-native-elements';
@@ -56,13 +56,9 @@ const SingleMeal = (props) => {
           </Stack>
         </Stack>
         <Box w={width} justifyContent={'center'} flexDirection={'row'}>
-          <Circle size={'md'} bg='secondary.400' mx={3}>
-            <Icon as={<AntDesign name='hearto' />} color='white' size={8} />
-          </Circle>
+            <Image w={16} height={16} mx={1} source={{uri:'https://cdn-icons-png.flaticon.com/128/3237/3237429.png'}} />
           <TouchableOpacity activeOpacity={0.5} onPress={() => setVisible(true)}>
-            <Circle size={'md'} bg='blue.500' mx={3}>
-              <Icon as={<AntDesign name='edit' />} color='white' size={8} />
-            </Circle>
+            <Image w={16} height={16}  mx={1} source={{uri:'https://cdn-icons-png.flaticon.com/128/1057/1057097.png'}} />
           </TouchableOpacity>
         </Box>
         <Divider my={2} bg='coolGray.300' thickness='10' />
