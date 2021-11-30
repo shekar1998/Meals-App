@@ -18,8 +18,7 @@ const DrawerNavigation = () => {
       <Drawer.Screen
         name='Home'
         options={{
-            headerStyle: { backgroundColor: bgcolor.header },
-          }}
+        }}
         component={StackNavigation}
       />
       <Drawer.Screen name='AboutUs' component={AboutUs} />

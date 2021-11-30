@@ -1,13 +1,14 @@
 import React from 'react';
 import { Box, Heading, AspectRatio, Image, Text, Center, HStack, Stack, NativeBaseProvider } from 'native-base';
 import color from '../assets/color';
-import { Touchable, TouchableOpacity } from 'react-native';
+import { Touchable, TouchableOpacity, StyleSheet } from 'react-native';
 
 export const MealsCard = (props) => {
   return (
     <TouchableOpacity
       activeOpacity={0.5}
       onPress={() => props.navigation.navigate('Meals Details', { params: props.item })}
+      style={styles.mainContainer}
     >
       <Box
         maxW='80'
@@ -59,8 +60,17 @@ export const MealsCard = (props) => {
           </Stack>
           <Text fontWeight='400'>{props.item.description}</Text>
         </Stack>
-       
+
       </Box>
     </TouchableOpacity>
   );
 };
+
+const styles = StyleSheet.create({
+
+  mainContainer: {
+    marginTop: 10
+  }
+})
+
+

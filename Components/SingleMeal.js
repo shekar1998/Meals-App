@@ -8,38 +8,17 @@ import { Rating } from 'react-native-elements';
 import moment from 'moment';
 import AddComments from './AddComments';
 
-const ratng = [
-  {
-    text: 'Good Food with good taste',
-    ratings: 4.5,
-  },
-  {
-    text: 'Good Food with good taste',
-    ratings: 3.5,
-  },
-  {
-    text: 'Good Food with good taste',
-    ratings: 4,
-  },
-  {
-    text: 'Good Food with good taste',
-    ratings: 3,
-  },
-  {
-    text: 'Good Food with good taste',
-    ratings: 2,
-  },
-];
 
 const SingleMeal = (props) => {
-  console.log(props.route.params.params);
   const [Visible, setVisible] = useState(false);
+
+  const { comments } = props.route.params.params
 
   const handleClose = () => {
     setVisible(false);
   }
   return (
-    <ScrollView>
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
       <Box w={width} bg={'#fff'}>
         <Image
           style={styles.image}
@@ -91,15 +70,16 @@ const SingleMeal = (props) => {
           </TouchableOpacity>
         </Box>
         <Divider my={2} bg='coolGray.300' thickness='10' />
-        <Box w={width} h={height} alignItems={'flex-start'}>
+        <Box w={width} pb="2" pl="2" pr="2" alignItems={'flex-start'} >
           <Heading size='md' ml='-1' alignSelf={'center'}>
             Comments
           </Heading>
           <Divider my={2} bg='coolGray.300' thickness='1' />
-          {ratng.map((data) => {
+          {comments.map((data) => {
             return (
               <>
                 <Text
+                  key={data.id}
                   m={1}
                   fontSize='md'
                   _dark={{
@@ -107,12 +87,13 @@ const SingleMeal = (props) => {
                   }}
                   fontWeight='700'
                 >
-                  {data.text}
+                  {data.comment}
                 </Text>
                 <Rating
+                  readonly
                   type='star'
                   fractions={1}
-                  startingValue={data.ratings}
+                  startingValue={data.rating}
                   ratingCount={5}
                   imageSize={20}
                   ratingBackgroundColor={'red'}
@@ -126,7 +107,7 @@ const SingleMeal = (props) => {
                     }}
                     fontWeight='500'
                   >
-                    Manjunath
+                    {data.user}
                   </Text>
                   <Text
                     m={1}
@@ -143,9 +124,9 @@ const SingleMeal = (props) => {
             );
           })}
         </Box>
-        
-           <AddComments visible={Visible} handleClose={handleClose} item={props.route.params.params} />
-        
+
+        <AddComments visible={Visible} handleClose={handleClose} item={props.route.params.params} />
+
       </Box>
     </ScrollView>
   );

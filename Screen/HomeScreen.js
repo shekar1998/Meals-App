@@ -5,15 +5,16 @@ import { MealsCard } from '../Components/MealsCard';
 
 const HomeScreen = (props) => {
   const renderItem = ({ item }) => {
-    return <MealsCard key={item.name} item={item} navigation={props.navigation}/>;
+    return <MealsCard key={item.name} item={item} navigation={props.navigation} />;
   };
   return (
     <View
-      style={{ flex: 1, justifyContent: 'center', alignSelf: 'center', alignContent: 'center', alignItems: 'center' }}
+      style={{ flex: 1 }}
     >
       <FlatList
         data={MealsData}
         renderItem={renderItem}
+        contentContainerStyle={{ alignItems: 'center', justifyContent: 'space-between', flexGrow: 1, paddingBottom: 10 }}
         // @ts-ignore
         keyExtractor={(item) => item.id}
       />

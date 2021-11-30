@@ -1,15 +1,12 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import color from '../assets/color';
-import Icon from '@expo/vector-icons/AntDesign';
 import HomeScreen from '../Screen/HomeScreen';
-import DrawerNavigation from './DrawerNavigation';
 import SingleMeal from '../Components/SingleMeal';
 
 const bgcolor = color.light;
+const Stack = createNativeStackNavigator();
 const StackNavigation = () => {
-  const Stack = createNativeStackNavigator();
 
   return (
     <Stack.Navigator>

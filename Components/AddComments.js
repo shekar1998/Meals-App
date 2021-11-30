@@ -1,8 +1,24 @@
-import { Button, Modal, FormControl, Input, Center, NativeBaseProvider } from 'native-base';
+import { Button, Modal, FormControl, Input, Icon } from 'native-base';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Rating } from 'react-native-elements';
+import { MaterialIcons } from "@expo/vector-icons"
+
 
 const AddComments = (props) => {
+  const [rating, setRating] = useState()
+  const [user, setUser] = useState("")
+  const [comment, setComment] = useState("")
+
+  const handleRating = (val) => {
+    setRating(val)
+    console.log(rating);
+  }
+
+  const handleSubmit = () => {
+    props.handleClose();
+  }
+
   return (
     <>
       <Modal isOpen={props.visible} onClose={() => props.handleClose()}>
@@ -10,13 +26,48 @@ const AddComments = (props) => {
           <Modal.CloseButton />
           <Modal.Header>Contact Us</Modal.Header>
           <Modal.Body>
+            <View>
+              <Rating
+                type='star'
+                fractions={1}
+                startingValue={0}
+                ratingCount={5}
+                imageSize={25}
+                onFinishRating={handleRating}
+                showRating
+              />
+            </View>
             <FormControl>
-              <FormControl.Label>Name</FormControl.Label>
-              <Input />
+              <FormControl.Label>User</FormControl.Label>
+              <Input
+                onChangeText={(text) => setUser(text)}
+                value={user}
+                InputLeftElement={
+                  <Icon
+                    as={<MaterialIcons name="person" />}
+                    size={5}
+                    ml="2"
+                    color="muted.400"
+                  />
+                }
+                placeholder="Name"
+              />
             </FormControl>
             <FormControl mt='3'>
-              <FormControl.Label>Email</FormControl.Label>
-              <Input />
+              <FormControl.Label>Comment</FormControl.Label>
+              <Input
+                onChangeText={(text) => setComment(text)}
+                value={comment}
+                InputLeftElement={
+                  <Icon
+                    as={<MaterialIcons name="comment" />}
+                    size={5}
+                    ml="2"
+                    color="muted.400"
+                  />
+                }
+                placeholder="Comment"
+              />
             </FormControl>
           </Modal.Body>
           <Modal.Footer>
@@ -31,11 +82,9 @@ const AddComments = (props) => {
                 Cancel
               </Button>
               <Button
-                onPress={() => {
-                  props.handleClose();
-                }}
+                onPress={handleSubmit}
               >
-                Save
+                Submit
               </Button>
             </Button.Group>
           </Modal.Footer>
