@@ -50,7 +50,7 @@ const AddComments = (props) => {
             <View>
               <Rating
                 type='star'
-                fractions={1}
+                fractions={0}
                 startingValue={0}
                 ratingCount={5}
                 imageSize={25}
@@ -81,8 +81,7 @@ const AddComments = (props) => {
           <Modal.Footer>
             <Button.Group space={2}>
               <Button
-                variant='ghost'
-                colorScheme='blueGray'
+                colorScheme='red'
                 onPress={() => {
                   props.handleClose();
                 }}

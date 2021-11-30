@@ -22,17 +22,13 @@ export const MealsCard = (props) => {
     >
       <Box
         maxW='96'
-        rounded='lg'
+        rounded='none'
         overflow='hidden'
         borderColor='coolGray.200'
         borderWidth='1'
         _dark={{
           borderColor: 'coolGray.600',
           backgroundColor: 'gray.700',
-        }}
-        _web={{
-          shadow: 2,
-          borderWidth: 0,
         }}
         _light={{
           backgroundColor: 'gray.50',
@@ -70,7 +66,6 @@ export const MealsCard = (props) => {
           </Stack>
           <Text fontWeight='400'>{props.item.description}</Text>
         </Stack>
-
       </Box>
     </TouchableOpacity>
   );

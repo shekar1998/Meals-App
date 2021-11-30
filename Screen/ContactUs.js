@@ -9,9 +9,9 @@ import {
     Center,
     HStack,
     Stack,
-    NativeBaseProvider,
 } from "native-base"
 import { MaterialIcons } from "@expo/vector-icons"
+import TextWithIcon from './../Components/TextWithIcon';
 
 let { width, height } = Dimensions.get("window");
 
@@ -19,7 +19,13 @@ let { width, height } = Dimensions.get("window");
 const ContactUs = () => {
     return (
         <View style={styles.mainContainer}>
-            <Text style={styles.heading}>Where to contact us?</Text>
+            <Text style={styles.heading} fontSize="xs"
+                _light={{
+                    color: "violet.500",
+                }}
+                _dark={{
+                    color: "violet.400",
+                }}>Where to contact us?</Text>
             <Box
                 maxW={width - 20}
                 rounded="lg"
@@ -29,10 +35,6 @@ const ContactUs = () => {
                 _dark={{
                     borderColor: "coolGray.600",
                     backgroundColor: "gray.700",
-                }}
-                _web={{
-                    shadow: 2,
-                    borderWidth: 0,
                 }}
                 _light={{
                     backgroundColor: "gray.50",
@@ -89,36 +91,9 @@ const ContactUs = () => {
                         Bengaluru (also called Bangalore) is the center of India's high-tech
                         industry. This is where we reside.
                     </Text>
-                    <HStack alignItems="center" space={4} justifyContent="space-between">
-                        <HStack alignItems="center">
-                            <MaterialIcons name="phone" size={20} />
-                            <Text
-                                color="coolGray.600"
-                                _dark={{
-                                    color: "warmGray.200",
-                                }}
-                                ml="2"
-                                fontWeight="400"
-                            >
-                                +91 9999988888
-                            </Text>
-                        </HStack>
-                    </HStack>
-                    <HStack alignItems="center" space={4} justifyContent="space-between">
-                        <HStack alignItems="center">
-                            <MaterialIcons name="email" size={20} />
-                            <Text
-                                color="coolGray.600"
-                                _dark={{
-                                    color: "warmGray.200",
-                                }}
-                                ml="2"
-                                fontWeight="400"
-                            >
-                                meals@example.com
-                            </Text>
-                        </HStack>
-                    </HStack>
+                    <TextWithIcon data="Bengaluru, India" icon="location-pin" />
+                    <TextWithIcon data="+91 9999988888" icon="phone" />
+                    <TextWithIcon data="meals@example.com" icon="email" />
                 </Stack>
             </Box>
         </View>

@@ -11,7 +11,7 @@ import {
   NativeBaseProvider,
   ScrollView,
 } from 'native-base';
-import { Dimensions } from 'react-native';
+import { Dimensions, View } from 'react-native';
 import partner from '../assets/partner.json';
 
 const { width, height } = Dimensions.get('window');
@@ -28,10 +28,7 @@ export const Partners = () => {
         borderColor: 'coolGray.600',
         backgroundColor: 'gray.700',
       }}
-      _web={{
-        shadow: 2,
-        borderWidth: 0,
-      }}
+
       _light={{
         backgroundColor: 'gray.50',
       }}
@@ -59,12 +56,12 @@ export const Partners = () => {
       <Stack p='4' space={3}>
         {partner.map((data) => {
           return (
-            <>
+            <View key={data.name}>
               <Heading size='md' ml='-1'>
                 {data.name}
               </Heading>
               <Text fontWeight='400'>{data.details}</Text>
-            </>
+            </View>
           );
         })}
       </Stack>

@@ -16,10 +16,7 @@ export const HistoryApp = () => {
         borderColor: 'coolGray.600',
         backgroundColor: 'gray.700',
       }}
-      _web={{
-        shadow: 2,
-        borderWidth: 0,
-      }}
+
       _light={{
         backgroundColor: '#fff',
       }}

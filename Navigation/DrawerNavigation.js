@@ -20,8 +20,8 @@ const DrawerNavigation = () => {
         options={{}}
         component={StackNavigation}
       />
-      <Drawer.Screen name='AboutUs' component={AboutUs} />
-      <Drawer.Screen name='ContactUs' component={ContactUs} />
+      <Drawer.Screen name='AboutUs' component={AboutUs} options={{ headerTitle: "About Us" }} />
+      <Drawer.Screen name='ContactUs' component={ContactUs} options={{ headerTitle: "Contact Us" }} />
     </Drawer.Navigator>
   );
 };
