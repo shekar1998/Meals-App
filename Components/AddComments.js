@@ -1,16 +1,16 @@
 import { Button, Modal, FormControl, Input, Icon } from 'native-base';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import { Rating } from 'react-native-elements';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useDispatch } from 'react-redux';
 import { addComment } from './../Redux/Actions/commentActions';
 import ErrorComponent from './Error';
 
-
+const {width, height} = Dimensions.get('window');
 
 const AddComments = (props) => {
-  const [rating, setRating] = useState();
+  const [rating, setRating] = useState(0);
   const [user, setUser] = useState('');
   const [comment, setComment] = useState('');
   const [error, setError] = useState('');
@@ -43,7 +43,7 @@ const AddComments = (props) => {
   return (
     <>
       <Modal isOpen={props.visible} onClose={() => props.handleClose()}>
-        <Modal.Content maxWidth='500px'>
+        <Modal.Content w={width-20}>
           <Modal.CloseButton />
           <Modal.Header>Add Comments</Modal.Header>
           <Modal.Body>

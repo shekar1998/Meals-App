@@ -42,8 +42,8 @@ export const HistoryApp = () => {
         </Box>
       </Box>
       <Stack p='4' space={3}>
-        <Text fontWeight='400'>Engineers should help solve the hardest questions, the unknowns, where being familiar with how the product was built is essential. But we don’t want to keep answering solved problems over and over again. That’s where Stack Overflow for Teams really helps.</Text>
-        <Text fontWeight='400'>As we started to use [Stack Overflow for Teams] and saw how nice it was to have a repository of information, we started to see it spread to other teams. Our customer support team started using it, our people success team started using it, next thing we knew, we had [Slack] integrations all over the place.</Text>
+        <Text fontWeight='400'>In the first year, the startup began by listing thousands of restaurants in India's six biggest cities. Then came an email from entrepreneur-turned-investor Sanjeev Bikhchandani, who invested $1 million through his Info Edge India Ltd. Foodiebay was renamed Zomato to rhyme with tomato.</Text>
+        <Text fontWeight='400'>In 2013, the two founders, Sriharsha Majety and Nandan Reddy, designed an e-commerce website called Bundl to facilitate courier service and shipping within India. Bundl was halted, and was rebranded to enter the food delivery market.</Text>
       </Stack>
     </Box>
   );
