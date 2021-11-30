@@ -20,7 +20,7 @@ export const Partners = () => {
   return (
     <Box
       w={width}
-      rounded='lg'
+      rounded='none'
       overflow='hidden'
       borderColor='coolGray.200'
       borderWidth='1'

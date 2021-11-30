@@ -17,8 +17,7 @@ const DrawerNavigation = () => {
     <Drawer.Navigator initialRouteName='Home'>
       <Drawer.Screen
         name='Home'
-        options={{
-        }}
+        options={{}}
         component={StackNavigation}
       />
       <Drawer.Screen name='AboutUs' component={AboutUs} />

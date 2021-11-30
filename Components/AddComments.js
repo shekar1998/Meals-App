@@ -3,30 +3,41 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Rating } from 'react-native-elements';
 import { MaterialIcons } from '@expo/vector-icons';
-import MealData from '../assets/MealData.json';
+import { useDispatch } from 'react-redux';
+import { addComment } from './../Redux/Actions/commentActions';
+import ErrorComponent from './Error';
+
+
 
 const AddComments = (props) => {
   const [rating, setRating] = useState();
   const [user, setUser] = useState('');
   const [comment, setComment] = useState('');
+  const [error, setError] = useState('');
+
   const handleRating = (val) => {
     setRating(val);
   };
 
-  const handleSubmit = async () => {
-    const addedComment = {
-      id: Date.now(),
-      comment: comment,
-      user: user,
-      rating: rating,
-    };
-    const selectedData = await MealData.filter((data) => {
-      if (data.id === props.item.id) {
-        data.comments.push(addedComment);
-      }
-    });
-    // await MealData[props.item.id].comments.push(addedComment)
-    props.handleClose();
+  const dispatch = useDispatch()
+
+  const handleSubmit = () => {
+    if (comment !== "" && user !== "") {
+
+      const addedComment = {
+        id: Date.now(),
+        comment: comment,
+        user: user,
+        rating: rating,
+      };
+      dispatch(addComment(addedComment))
+      setRating(0)
+      setUser("")
+      setComment("")
+      props.handleClose();
+    } else {
+      setError("Please fill all details")
+    }
   };
 
   return (
@@ -34,7 +45,7 @@ const AddComments = (props) => {
       <Modal isOpen={props.visible} onClose={() => props.handleClose()}>
         <Modal.Content maxWidth='500px'>
           <Modal.CloseButton />
-          <Modal.Header>Contact Us</Modal.Header>
+          <Modal.Header>Add Comments</Modal.Header>
           <Modal.Body>
             <View>
               <Rating
@@ -65,6 +76,7 @@ const AddComments = (props) => {
                 placeholder='Comment'
               />
             </FormControl>
+            {error.length > 0 && <ErrorComponent message={error} />}
           </Modal.Body>
           <Modal.Footer>
             <Button.Group space={2}>

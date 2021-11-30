@@ -2,12 +2,22 @@ import React from 'react';
 import { Box, Heading, AspectRatio, Image, Text, Center, HStack, Stack, NativeBaseProvider } from 'native-base';
 import color from '../assets/color';
 import { Touchable, TouchableOpacity, StyleSheet } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { populateData } from '../Redux/Actions/commentActions';
 
 export const MealsCard = (props) => {
+
+  const dispatch = useDispatch()
+
+  const handlePress = () => {
+    dispatch(populateData(props.item))
+    props.navigation.navigate('Meals Details', { params: props.item })
+  }
+
   return (
     <TouchableOpacity
       activeOpacity={0.5}
-      onPress={() => props.navigation.navigate('Meals Details', { params: props.item })}
+      onPress={() => handlePress()}
       style={styles.mainContainer}
     >
       <Box

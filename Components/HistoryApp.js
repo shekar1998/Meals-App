@@ -8,7 +8,7 @@ export const HistoryApp = () => {
   return (
     <Box
       w={width}
-      rounded='lg'
+      rounded='none'
       overflow='hidden'
       borderColor='#fff'
       borderWidth='1'

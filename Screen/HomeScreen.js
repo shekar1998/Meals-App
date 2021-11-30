@@ -15,7 +15,6 @@ const HomeScreen = (props) => {
         data={MealsData}
         renderItem={renderItem}
         contentContainerStyle={{ alignItems: 'center', justifyContent: 'space-between', flexGrow: 1, paddingBottom: 10 }}
-        // @ts-ignore
         keyExtractor={(item) => item.id}
       />
     </View>

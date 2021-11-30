@@ -6,13 +6,19 @@ import StackNavigation from './Navigation/StackNavigation';
 import DrawerNavigation from './Navigation/DrawerNavigation';
 import { NativeBaseProvider } from 'native-base';
 const { width, height } = Dimensions.get('window');
+import store from "./Redux/store";
+import { Provider } from "react-redux";
+
+
 export default function App() {
   return (
-    <NativeBaseProvider>
-      <NavigationContainer>
-        <DrawerNavigation />
-      </NavigationContainer>
-    </NativeBaseProvider>
+    <Provider store={store}>
+      <NativeBaseProvider>
+        <NavigationContainer>
+          <DrawerNavigation />
+        </NavigationContainer>
+      </NativeBaseProvider>
+    </Provider>
   );
 }
 

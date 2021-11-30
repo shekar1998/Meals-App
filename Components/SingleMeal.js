@@ -6,11 +6,12 @@ import { AntDesign } from '@expo/vector-icons';
 import { Rating } from 'react-native-elements';
 import moment from 'moment';
 import AddComments from './AddComments';
+import { useSelector } from "react-redux"
 
 const SingleMeal = (props) => {
   const [Visible, setVisible] = useState(false);
-
-  const { comments } = props.route.params.params;
+  const state = useSelector(state => state.commentReducer)
+  const { comments, imageURL, name, description } = state.mealDetail;
 
   const handleClose = () => {
     setVisible(false);
@@ -21,13 +22,13 @@ const SingleMeal = (props) => {
         <Image
           style={styles.image}
           source={{
-            uri: props.route.params.params.imageURL,
+            uri: imageURL,
           }}
         />
         <Stack p='4' space={3}>
           <Stack space={2}>
             <Heading size='lg' ml='-1'>
-              {props.route.params.params.name}
+              {name}
             </Heading>
             <Text
               fontSize='lg'
@@ -50,7 +51,7 @@ const SingleMeal = (props) => {
               }}
               fontWeight='500'
             >
-              {props.route.params.params.description}
+              {description}
             </Text>
           </Stack>
         </Stack>
@@ -120,7 +121,7 @@ const SingleMeal = (props) => {
           })}
         </Box>
 
-        <AddComments visible={Visible} handleClose={handleClose} item={props.route.params.params} />
+        <AddComments visible={Visible} handleClose={handleClose} item={state.mealDetail} />
       </Box>
     </ScrollView>
   );
